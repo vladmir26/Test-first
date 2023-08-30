@@ -5,3 +5,17 @@
 .link:hover {
   color: #0d6efd;  
 }
+
+.form-control {
+  width: calc(100% - 1rem);
+}
+
+.textarea {
+  height: 38px;
+  max-height: 100%;
+}
+
+
+.validator-err {
+  color: rgb(239, 35, 60);
+} 

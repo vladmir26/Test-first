@@ -1,9 +1,0 @@
-{
-  "devDependencies": {
-    "htmlhint": "^1.1.4"
-  },
-  "dependencies": {
-    "@popperjs/core": "^2.11.8",
-    "validate-js": "^2.0.1"
-  }
-}
