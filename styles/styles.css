@@ -6,6 +6,10 @@
   color: #0d6efd;  
 }
 
+.modal-dialog {
+  max-width: 800px;
+}
+
 .form-control {
   width: calc(100% - 1rem);
 }

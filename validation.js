@@ -33,30 +33,26 @@ function download(file) {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   v.validate();
-  if (e.target.checkValidity()) {
-    const file = new File(new FormData(e.target), 'new-note.txt', {
-      type: 'text'
-    })
-    download(file);
-  }
 });
 
 v.on('validation:success', () => {
  alert('Хорошо! Форма прошла проверку без ошибок.');
-});
+ const formData = new FormData(form);
+ let result = [];
+ for (const pair of formData.entries()) {
+   result.push(pair[0] + ': ');
+   result.push(pair[1] + '\n'); 
+ }
+ const file = new File(result, 'new-note.txt', {
+   type: 'text'
+ })
+ download(file);
+
+ const myModalEl = document.getElementById('exampleModal');
+ const modal = bootstrap.Modal.getInstance(myModalEl);
+ modal.hide();
+}); 
 
 
-v.on('validation:failed', () => {
-  const phone = document.querySelector('.phone-wrapper');
-  const mask = document.querySelector('.mask');
-  const textarea = document.querySelector('.textarea');
-    if (mask.dataset.rules === 'min:16|required') {
-      phone.classList.remove('ms-3');
-    }
-    if (textarea.value === '')  {
-         textarea.classList.remove('ms-3');
-    }
-    
-  });
   
 
